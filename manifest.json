@@ -1,0 +1,9 @@
+{
+    "name": "Cryptfolio",
+    "version": "1.0",
+    "description": "See the current total value of your cryptocurrency portfolio",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 2
+}
