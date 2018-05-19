@@ -7,6 +7,10 @@
                 min-width: 300px;
             }
 
+            input {
+                float: right;
+            }
+
         </style>
     
 
@@ -16,10 +20,14 @@
     
     <p>Welcome to Cryptfolio!</p>
     <p>Current portfolio value:</p>
-    <h1>$20,000</h1>
-    <button id="updateValue" onclick="updateValue()">Update</button>
+    <h1 id="portfolio">$0</h1>
+    Bitcoin: <input type="text" id="btc"><br><br>
+    Ethereum: <input type="text" id="eth"><br><br>
+    Bitcoin Cash: <input type="text" id="bch"><br><br>
+    Litecoin: <input type="text" id="ltc"><br><br>
+    <button id="updateValue">Update</button>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
 
     </body>
