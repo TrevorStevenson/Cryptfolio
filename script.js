@@ -1,5 +1,21 @@
 document.getElementById("updateValue").onclick = updateValue;
 
+chrome.storage.sync.get("btc", function(coin) {
+    $("#btc").val(coin["btc"]);
+});
+
+chrome.storage.sync.get("eth", function(coin) {
+    $("#eth").val(coin["eth"]);
+});
+
+chrome.storage.sync.get("bch", function(coin) {
+    $("#bch").val(coin["bch"]);
+});
+
+chrome.storage.sync.get("ltc", function(coin) {
+    $("#ltc").val(coin["ltc"]);
+});
+
 function updateValue() 
 {
     console.log("loading");
@@ -35,7 +51,12 @@ function updateValue()
         var ltcAmount = parseFloat(document.getElementById("ltc").value);
 
         var totalValue = btcAmount * btcPrice + ethAmount * ethPrice + bchAmount * bchPrice + ltcAmount * ltcPrice;
-
-        $("#portfolio").text("$" + totalValue.toString());
+        var roundedValue = Math.round(totalValue * 100) / 100;
+        $("#portfolio").text("$" + totalValue.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'));
     });
+
+    chrome.storage.sync.set({"btc": document.getElementById("btc").value});
+    chrome.storage.sync.set({"eth": document.getElementById("eth").value});
+    chrome.storage.sync.set({"bch": document.getElementById("bch").value});
+    chrome.storage.sync.set({"ltc": document.getElementById("ltc").value});
 }
