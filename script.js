@@ -1,5 +1,9 @@
 document.getElementById("updateValue").onclick = updateValue;
 
+$(document).ready(function() {
+    updateValue();
+});
+
 chrome.storage.sync.get("btc", function(coin) {
     $("#btc").val(coin["btc"]);
 });
