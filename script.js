@@ -20,7 +20,7 @@ chrome.storage.sync.get("ltc", function(coin) {
     $("#ltc").val(coin["ltc"]);
 });
 
-function updateValue() 
+function updateValue()
 {
     console.log("loading");
     $("#portfolio").text("Loading");
